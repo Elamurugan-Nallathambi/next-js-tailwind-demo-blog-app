@@ -4,14 +4,18 @@ import AppFooter from '@components/footer'
 import Post from '@components/post'
 import {PostModel} from '@components/model/post'
 import {InferGetServerSidePropsType, GetServerSidePropsContext} from "next";
+import Head from 'next/head'
 
 
-export default function PostView({post}: InferGetServerSidePropsType<typeof getStaticProps>) {
+export default function PostViewPage({post}: InferGetServerSidePropsType<typeof getStaticProps>) {
 
     return (
         <div className="min-h-screen w-full relative">
             <AppHead/>
             <AppHeader/>
+            <Head>
+                <title>{post.title} - Demo Blog App</title>
+            </Head>
 
             <main className="w-full relative">
                 <div className="relative bg-white overflow-hidden">

@@ -45,7 +45,7 @@ const solutions = [
 ]
 const callsToAction = [
     {name: 'Watch Demo', href: '#', icon: PlayIcon},
-    {name: 'Contact Sales', href: '#', icon: PhoneIcon},
+    {name: 'Contact Sales', href: '/contact-us', icon: PhoneIcon},
 ]
 
 function classNames(...classes: any) {
@@ -60,7 +60,7 @@ export default function AppHeader() {
                     <div className="flex justify-start lg:w-0 lg:flex-1">
                         <a href="/">
                             <span className="sr-only">Demo App</span>
-                            <h1 className='pl-2'>Demo App</h1>
+                            <h1  className="pl-2 text-2xl font-bold text-indigo-600">Demo App</h1>
                         </a>
                     </div>
                     <div className="-mr-2 -my-2 md:hidden">

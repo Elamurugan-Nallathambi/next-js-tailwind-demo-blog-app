@@ -2,7 +2,7 @@ import AppHead from '@components/head'
 import AppHeader from '@components/header'
 import AppFooter from '@components/footer'
 
-export default function Home() {
+export default function HomePage() {
     return (
         <div className="min-h-screen py-2">
             <AppHead/>

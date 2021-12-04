@@ -4,7 +4,7 @@ import AppFooter from '@components/footer'
 import {PostModel} from '@components/model/post'
 import {InferGetServerSidePropsType} from "next";
 
-export default function Posts({posts}: InferGetServerSidePropsType<typeof getStaticProps>) {
+export default function PostsPage({posts}: InferGetServerSidePropsType<typeof getStaticProps>) {
     return (
         <div className="min-h-screen py-2">
             <AppHead/>

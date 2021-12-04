@@ -5,7 +5,7 @@ export default function AppFooter() {
                 className="flex items-center justify-center"
                 href="/"
             >
-                Powered by Next.Js + TailWind
+                Powered by Next.Js + TailWind + Tailwind Templates from tailwindui.com
             </a>
         </footer>
     )
