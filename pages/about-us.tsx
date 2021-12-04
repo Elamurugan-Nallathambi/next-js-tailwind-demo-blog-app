@@ -4,7 +4,7 @@ import AppFooter from '@components/footer'
 
 export default function AboutUsPage() {
     return (
-        <div className="min-h-screen py-2">
+        <div className="min-h-screen w-full relative">
             <AppHead/>
             <AppHeader/>
 

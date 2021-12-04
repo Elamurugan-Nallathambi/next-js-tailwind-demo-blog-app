@@ -2,9 +2,12 @@ import AppHead from '@components/head'
 import AppHeader from '@components/header'
 import AppFooter from '@components/footer'
 import Head from 'next/head'
+import {useRouter} from 'next/router'
 
 
 export default function ContactUsPage() {
+    const {submitted} = useRouter().query;
+    const showSuccessBlock = (submitted === '1');
 
     return (
         <div className="min-h-screen w-full relative">
@@ -18,10 +21,15 @@ export default function ContactUsPage() {
                 <div className="relative bg-white overflow-hidden">
                     <div className="pt-5 pb-10">
                         <div className="relative max-w-7xl w-full  mx-auto sm:static">
-                            <div>
-                                <div className="container mx-auto flex flex-wrap w-full flex-1 ">
+                            <div className="container mx-auto ">
 
-                                    <form className="w-full max-w-lg" name="contact-us" method="post" data-netlify="true" action="/thank-you">
+                                <div className={`w-full bg-green-500 border-l-4 border-green-900 text-white p-4  ${showSuccessBlock ? "" : "hidden"}`} role="alert">
+                                    <p className="font-bold">Thank You for your Feedback</p>
+                                </div>
+
+                                <div className="container mx-auto flex flex-wrap w-full flex-1 pt-10">
+
+                                    <form className="w-full max-w-lg" name="contact-us" method="post" data-netlify="true" action="/contact-us?submitted=1">
                                         <input type="hidden" name="form-name" value="contact-us"/>
                                         <div className="flex flex-wrap -mx-3 mb-6">
                                             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -29,14 +37,14 @@ export default function ContactUsPage() {
                                                     First Name
                                                 </label>
                                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name"
-                                                       type="text" placeholder="Jane" name="firstname"  required/>
+                                                       type="text" placeholder="Jane" name="firstname" required/>
                                             </div>
                                             <div className="w-full md:w-1/2 px-3">
                                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
                                                     Last Name
                                                 </label>
                                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                       id="grid-last-name" type="text" placeholder="Doe" name="lastname"  required/>
+                                                       id="grid-last-name" type="text" placeholder="Doe" name="lastname" required/>
                                             </div>
                                         </div>
                                         <div className="flex flex-wrap -mx-3 mb-6">
@@ -45,7 +53,7 @@ export default function ContactUsPage() {
                                                     E-mail
                                                 </label>
                                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                       id="email" type="email" name="email"  required/>
+                                                       id="email" type="email" name="email" required/>
                                             </div>
                                         </div>
                                         <div className="flex flex-wrap -mx-3 mb-6">

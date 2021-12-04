@@ -6,7 +6,7 @@ import {InferGetServerSidePropsType} from "next";
 
 export default function PostsPage({posts}: InferGetServerSidePropsType<typeof getStaticProps>) {
     return (
-        <div className="min-h-screen py-2">
+        <div className="min-h-screen w-full relative">
             <AppHead/>
             <AppHeader/>
 
